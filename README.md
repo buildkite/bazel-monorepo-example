@@ -1,15 +1,15 @@
 # Buildkite Bazel Monorepo Example
 
-[![Build status](https://badge.buildkite.com/1017abf3dc2fec3df38f92a734aac19c213072c878deaf7e75.svg)](https://buildkite.com/buildkite/bazel-buildkite-example)
+[![Build status](https://badge.buildkite.com/1017abf3dc2fec3df38f92a734aac19c213072c878deaf7e75.svg)](https://buildkite.com/buildkite/bazel-monorepo-example)
 [![Add to Buildkite](https://img.shields.io/badge/Add%20to%20Buildkite-14CC80)](https://buildkite.com/new)
 
 This repository is an example [Buildkite](https://buildkite.com/) pipeline for building and testing a simple Python monorepo using [Bazel](https://bazel.build).
 
-👉 **See this example in action:** [buildkite.com/buildkite/bazel-buildkite-example](https://buildkite.com/buildkite/bazel-buildkite-example/builds/latest)
+👉 **See this example in action:** [buildkite.com/buildkite/bazel-monorepo-example](https://buildkite.com/buildkite/bazel-monorepo-example/builds/latest)
 
 [![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
 
-<a href="https://buildkite.com/buildkite/bazel-buildkite-example/builds/latest">
+<a href="https://buildkite.com/buildkite/bazel-monorepo-example/builds/latest">
   <img width="1491" alt="Screenshot of Buildkite Bazel example pipeline" src=".buildkite/screenshot.png" />
 </a>
 
@@ -19,7 +19,7 @@ This repository is an example [Buildkite](https://buildkite.com/) pipeline for b
 
 This simple hello-world example uses Bazel to build and test and a Python library (a `py_library` package, in Bazel parlance) and a Python script (or `py_binary`). The binary depends on the library, and the library gets built and packaged (by Bazel) as a Python wheel.
 
-The repo is configured with a Buildkite [pipeline](https://buildkite.com/buildkite/bazel-buildkite-example) that combines [`bazel query`](https://bazel.build/query/quickstart) with Buildkite [dynamic pipelines](https://buildkite.com/docs/pipelines/configure/dynamic-pipelines) to compute a pipeline definition at runtime based on the content of each commit. A [Buildkite plugin](https://github.com/buildkite-plugins/bazel-annotate-buildkite-plugin) also converts [Bazel Event Protocol (BEP)](https://bazel.build/remote/bep) output into Buildkite [annotations](https://buildkite.com/docs/apis/rest-api/annotations) and appends them to each build. Python packages are uploaded as Buildkite [artifacts](https://buildkite.com/docs/pipelines/configure/artifacts).
+The repo is configured with a Buildkite [pipeline](https://buildkite.com/buildkite/bazel-monorepo-example) that combines [`bazel query`](https://bazel.build/query/quickstart) with Buildkite [dynamic pipelines](https://buildkite.com/docs/pipelines/configure/dynamic-pipelines) to compute a pipeline definition at runtime based on the content of each commit. A [Buildkite plugin](https://github.com/buildkite-plugins/bazel-annotate-buildkite-plugin) also converts [Bazel Event Protocol (BEP)](https://bazel.build/remote/bep) output into Buildkite [annotations](https://buildkite.com/docs/apis/rest-api/annotations) and appends them to each build. Python packages are uploaded as Buildkite [artifacts](https://buildkite.com/docs/pipelines/configure/artifacts).
 
 ## Build all packages
 
