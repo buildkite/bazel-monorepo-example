@@ -1,7 +1,7 @@
 name: "Bazel Monorepo Example"
 description: "An example pipeline that builds and tests a Python monorepo using Bazel and dynamic pipelines."
-emoji: ":package:"
-color: "gray-100"
+emoji: ":bazel:"
+color: "#F0FDF2"
 languages:
   - "Python"
   - "Shell"
