@@ -1,15 +1,15 @@
 # Buildkite Bazel Monorepo Example
 
-[![Build status](https://badge.buildkite.com/1017abf3dc2fec3df38f92a734aac19c213072c878deaf7e75.svg)](https://buildkite.com/buildkite/bazel-monorepo-example)
+[![Build status](https://badge.buildkite.com/1017abf3dc2fec3df38f92a734aac19c213072c878deaf7e75.svg)](https://buildkite.com/buildkite/bazel-monorepo-example/builds/latest?branch=main)
 [![Add to Buildkite](https://img.shields.io/badge/Add%20to%20Buildkite-14CC80)](https://buildkite.com/new)
 
 This repository is an example [Buildkite](https://buildkite.com/) pipeline for building and testing a simple Python monorepo using [Bazel](https://bazel.build).
 
-👉 **See this example in action:** [buildkite.com/buildkite/bazel-monorepo-example](https://buildkite.com/buildkite/bazel-monorepo-example/builds/latest)
+👉 **See this example in action:** [buildkite.com/buildkite/bazel-monorepo-example](https://buildkite.com/buildkite/bazel-monorepo-example/builds/latest?branch=main)
 
 [![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
 
-<a href="https://buildkite.com/buildkite/bazel-monorepo-example/builds/latest">
+<a href="https://buildkite.com/buildkite/bazel-monorepo-example/builds/latest?branch=main">
   <img width="1491" alt="Screenshot of Buildkite Bazel example pipeline" src=".buildkite/screenshot.png" />
 </a>
 
@@ -175,4 +175,4 @@ $ python3 .buildkite/pipeline.py
 
 ## License
 
-See [Licence.md](Licence.md) (MIT)
+See [LICENSE.md](LICENSE.md) (MIT)
