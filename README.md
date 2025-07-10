@@ -1,14 +1,25 @@
-# bazel-buildkite-example
+# Buildkite Bazel Monorepo Example
 
-An example that builds a simple Python monorepo with Bazel and Buildkite! :kite:
+[![Build status](https://badge.buildkite.com/1017abf3dc2fec3df38f92a734aac19c213072c878deaf7e75.svg)](https://buildkite.com/buildkite/bazel-monorepo-example/builds/latest?branch=main)
+[![Add to Buildkite](https://img.shields.io/badge/Add%20to%20Buildkite-14CC80)](https://buildkite.com/new)
 
-[![Build status](https://badge.buildkite.com/1017abf3dc2fec3df38f92a734aac19c213072c878deaf7e75.svg)](https://buildkite.com/buildkite/bazel-buildkite-example)
+This repository is an example [Buildkite](https://buildkite.com/) pipeline for building and testing a simple Python monorepo using [Bazel](https://bazel.build).
+
+👉 **See this example in action:** [buildkite.com/buildkite/bazel-monorepo-example](https://buildkite.com/buildkite/bazel-monorepo-example/builds/latest?branch=main)
+
+[![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
+
+<a href="https://buildkite.com/buildkite/bazel-monorepo-example/builds/latest?branch=main">
+  <img width="1491" alt="Screenshot of Buildkite Bazel example pipeline" src=".buildkite/screenshot.png" />
+</a>
+
+<!-- docs:start -->
+
+## How it works
 
 This simple hello-world example uses Bazel to build and test and a Python library (a `py_library` package, in Bazel parlance) and a Python script (or `py_binary`). The binary depends on the library, and the library gets built and packaged (by Bazel) as a Python wheel.
 
-The repo is configured with a Buildkite [pipeline](https://buildkite.com/buildkite/bazel-buildkite-example) that combines [`bazel query`](https://bazel.build/query/quickstart) with Buildkite [dynamic pipelines](https://buildkite.com/docs/pipelines/configure/dynamic-pipelines) to compute a pipeline definition at runtime based on the content of each commit. A [Buildkite plugin](https://github.com/buildkite-plugins/bazel-annotate-buildkite-plugin) also converts [Bazel Event Protocol (BEP)](https://bazel.build/remote/bep) output into Buildkite [annotations](https://buildkite.com/docs/apis/rest-api/annotations) and appends them to each build. Python packages are uploaded as Buildkite [artifacts](https://buildkite.com/docs/pipelines/configure/artifacts). 
-
-[![The Buildkite pipeline that builds this repository](https://github.com/user-attachments/assets/896f7bf7-9387-4f72-a27f-0f25e78f16a5)](https://buildkite.com/nunciato/bazel-buildkite-example)
+The repo is configured with a Buildkite [pipeline](https://buildkite.com/buildkite/bazel-monorepo-example) that combines [`bazel query`](https://bazel.build/query/quickstart) with Buildkite [dynamic pipelines](https://buildkite.com/docs/pipelines/configure/dynamic-pipelines) to compute a pipeline definition at runtime based on the content of each commit. A [Buildkite plugin](https://github.com/buildkite-plugins/bazel-annotate-buildkite-plugin) also converts [Bazel Event Protocol (BEP)](https://bazel.build/remote/bep) output into Buildkite [annotations](https://buildkite.com/docs/apis/rest-api/annotations) and appends them to each build. Python packages are uploaded as Buildkite [artifacts](https://buildkite.com/docs/pipelines/configure/artifacts).
 
 ## Build all packages
 
@@ -25,15 +36,15 @@ INFO: Build completed successfully, 1 total action
 ## Build individual packages
 
 ```bash
-$ bazel build //library/...     
-                                             
+$ bazel build //library/...
+
 INFO: Analyzed 4 targets (1 packages loaded, 2167 targets configured).
 INFO: Found 4 targets...
 INFO: Elapsed time: 0.477s, Critical Path: 0.00s
 INFO: 1 process: 1 internal.
 INFO: Build completed successfully, 1 total action
 
-$ bazel build //app/...    
+$ bazel build //app/...
 INFO: Analyzed 2 targets (42 packages loaded, 417 targets configured).
 INFO: Found 2 targets...
 INFO: Elapsed time: 0.651s, Critical Path: 0.31s
@@ -56,7 +67,7 @@ $ bazel query "rdeps(//..., //library/...)"
 //library:test_hello
 ```
 
-## Run all tests 
+## Run all tests
 
 ```bash
 $ bazel test //...
@@ -158,4 +169,10 @@ $ python3 .buildkite/pipeline.py
 }
 ```
 
-:point_up: In this example, both the `app` and `library` packages were modified in the latest commit. 
+:point_up: In this example, both the `app` and `library` packages were modified in the latest commit.
+
+<!-- docs:end -->
+
+## License
+
+See [LICENSE.md](LICENSE.md) (MIT)
